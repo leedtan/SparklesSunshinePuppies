@@ -5,8 +5,12 @@
 
 ## Put your dataset onto hadoop, run:  
 
- > hadoop fs -copyFromLocal NYPD_Complaint_Data_Historic.csv
+ ```
+ hadoop fs -copyFromLocal NYPD_Complaint_Data_Historic.csv
+ ```
 
-## To run, run:  
+## To get the feature analysis outputs, run:  
 
- > bash run_all_scripts.sh
+ ```
+ bash run_all_scripts.sh
+ ```
