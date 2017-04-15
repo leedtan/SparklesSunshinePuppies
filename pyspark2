@@ -1,0 +1,45 @@
+from pyspark.sql import SparkSession
+from pyspark.sql import Row
+
+# Create a SparkSession
+spark = SparkSession \
+    .builder \
+    .appName("basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .getOrCreate()
+
+def mapper(line):
+    fields = line.split('_-^-^-^-_')
+    print(len(fields))
+    return Row(ID=str(fields[0]), 
+	field1=str(fields[1]), 
+	field2=str(fields[2]), 
+	field3=str(fields[3]), 
+	field4=str(fields[4]), 
+	field5=str(fields[5]), 
+	field6=str(fields[6]), 
+	field7=str(fields[7]), 
+	field8=str(fields[8]), 
+	field9=str(fields[9]), 
+	field10=str(fields[10]), 
+	field11=str(fields[11]), 
+	field12=str(fields[12]), 
+	field13=str(fields[13]), 
+	field14=str(fields[14]), 
+	field15=str(fields[15]), 
+	field16=str(fields[16]), 
+	field17=str(fields[17]), 
+	field18=str(fields[18]), 
+	field19=str(fields[19]),
+	field20=str(fields[20]), 
+	field21=str(fields[21]), 
+	field22=str(fields[22]), 
+	field23=str(fields[23]), 
+	field24=str(fields[24]))
+
+lines = spark.sparkContext.textFile("NYPD_PYSPARK2.csv")
+df = lines.map(mapper)
+
+# Infer the schema, and register the DataFrame as a table.
+schemaDf = spark.createDataFrame(df).cache()
+schemaDf.createOrReplaceTempView("tablename")
