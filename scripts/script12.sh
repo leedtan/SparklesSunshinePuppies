@@ -1,5 +1,5 @@
-out="CMPLNT_RP_DT.out"
-py="mapreduce5.py"
+out="JURIS_DESC.out"
+py="../feature_mapreduce/mapreduce12.py"
 file="NYPD_Complaint_Data_Historic.csv"
 hadoop fs -rm -r "$out"
 spark-submit "$py" "$file"
