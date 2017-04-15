@@ -86,7 +86,7 @@ if __name__ == "__main__":
 		v[0] if v[1] != 'Empty' else 'AAA',
 	        'Empty' if v[1] == 'Empty' else 'INT', 
 		'Classification Code', 
-		'VALID' if v[1] == 'int' and len(v[0]) == 3 else 'INVALID'))\
+		'VALID' if v[1] == 'int' and len(v[0]) == 3 else ('NULL' if v[1] == 'Empty' else 'INVALID')))\
                 .saveAsTextFile("KY_CD.out")
 
     sc.stop()

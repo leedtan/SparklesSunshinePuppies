@@ -85,7 +85,8 @@ if __name__ == "__main__":
 				if isfloat(x[idx]) else
             'tuple' if (re.findall('\(.*[,].*\)', x[idx]) != []
 			and x[idx].strip()[0] == '(' and x[idx].strip()[-1] == ')') else
-            type(x[idx]).__name__  # v[1]
+            type(x[idx]).__name__,
+	    x[21],x[22]
 	    ]))\
             .sortByKey(lambda x: x[0])
 
@@ -93,7 +94,9 @@ if __name__ == "__main__":
 		v[0] if v[1] != 'Empty' else '(999999,999999)',
 	    'Empty' if v[1] == 'Empty' else 'Tuple',
 		'Lat_Lon for Global Coordinate System',
-		'INVALID' if v[1] == 'Empty' else 'VALID')
+		'NULL' if v[1] == 'Empty' else ('VALID' if (float(v[3]) >= -74.165235 and float(v[3]) <= -73.743575) and
+			(float(v[2]) >= 40.562581 and float(v[2]) <= 40.886257)
+			 else 'INVALID'))
 		)\
                 .saveAsTextFile("Lat_Lon.out")
 

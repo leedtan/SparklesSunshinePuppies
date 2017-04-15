@@ -93,7 +93,7 @@ if __name__ == "__main__":
 		v[0] if v[1] != 'Empty' else '999999',
 	    'Empty' if v[1] == 'Empty' else 'INT',
 		'X coordinate within NY',
-		'INVALID' if v[1] == 'Empty' else 'VALID')
+		'NULL' if v[1] == 'Empty' else ('VALID' if float(v[0]) >= 938384 and float(v[0]) <= 1055351 else 'INVALID'))
 		)\
                 .saveAsTextFile("X_COORD_CD.out")
 

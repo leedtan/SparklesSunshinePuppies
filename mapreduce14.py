@@ -86,7 +86,7 @@ if __name__ == "__main__":
 		v[0] if v[1] != 'Empty' else 'RECORD EMPTY',
 	    'Empty' if v[1] == 'Empty' else 'INT',
 		'Precinct Code',
-		'INVALID' if v[1] == 'Empty' else 'VALID')
+		'NULL' if v[1] == 'Empty' else 'VALID')
 		)\
                 .saveAsTextFile("ADDR_PCT_CD.out")
 

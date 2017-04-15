@@ -93,7 +93,7 @@ if __name__ == "__main__":
 		v[0] if v[1] != 'Empty' else 'RECORD EMPTY',
 	    'Empty' if v[1] == 'Empty' else 'TEXT',
 		'Premise Type Description',
-		'INVALID' if v[1] == 'Empty' else 'VALID')
+		'NULL' if v[1] == 'Empty' else 'VALID')
 		)\
                 .saveAsTextFile("PREM_TYP_DESC.out")
 

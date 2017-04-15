@@ -93,7 +93,7 @@ if __name__ == "__main__":
 		v[0] if v[1] != 'Empty' else '999999',
 	    'Empty' if v[1] == 'Empty' else 'FLOAT',
 		'Longitude for Global Coordinate System',
-		'INVALID' if v[1] == 'Empty' else 'VALID')
+		'NULL' if v[1] == 'Empty' else ('VALID' if float(v[0]) >= -74.165235 and float(v[0]) <= -73.743575 else 'INVALID'))
 		)\
                 .saveAsTextFile("Longitude.out")
 

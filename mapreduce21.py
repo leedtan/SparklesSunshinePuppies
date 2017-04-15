@@ -93,7 +93,7 @@ if __name__ == "__main__":
 		v[0] if v[1] != 'Empty' else '999999',
 	    'Empty' if v[1] == 'Empty' else 'FLOAT',
 		'Latitude for Global Coordinate System',
-		'INVALID' if v[1] == 'Empty' else 'VALID')
+		'NULL' if v[1] == 'Empty' else ('VALID' if float(v[0]) >= 40.562581 and float(v[0]) <= 40.886257 else 'INVALID'))
 		)\
                 .saveAsTextFile("Latitude.out")
 

@@ -86,7 +86,7 @@ if __name__ == "__main__":
 		v[0] if v[1] != 'Empty' else 'RECORD EMPTY',
 	    'Empty' if v[1] == 'Empty' else 'TEXT',
 		'Crime Completed Or Attempted Indicator',
-		'INVALID' if v[1] == 'Empty' else 'VALID')
+		'NULL' if v[1] == 'Empty' else 'VALID')
 		)\
                 .saveAsTextFile("CRM_ATPT_CPTD_CD.out")
 
