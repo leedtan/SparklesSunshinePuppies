@@ -22,7 +22,6 @@ for i in pool:
 
 
 # KY_CD bar chart with respect to years
- trend over year
 plt.figure(figsize=(15, 6))
 c = sns.color_palette("muted", 6)
 c2 = sns.color_palette("bright", 6)
