@@ -1,5 +1,7 @@
 
-## BIGDATA Project Lee and Viola
+# BIGDATA Project 
+
+##Lee and Viola
 
 ### Dataset: 
 [NYC Crime](https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Data-Historic/qgea-i56i)
@@ -18,16 +20,16 @@
 
 ### To explore more about the time-series data analysis:
 
- > Use Pyspark to explore the crime type analysis with respect to year, month and day of week:
+ > Use PysparkSQL to explore the crime type analysis with respect to year, month and day of week. Below is an example:
  
   ```
   kycd_y_m_d_mapreduce.py
   ```
 
- > Use MapReduce to explore the crime type analysis with respect to hour:
+ > Use MapReduce to explore the crime type analysis with respect to hour. Below is an example:
 
   ```
   kycd_hour_mapreduce.py
   ```
-
- > All the plots scripts are in the folder "plots"
+  
+ > All the plots scripts and notebooks are in the folder "plots"
