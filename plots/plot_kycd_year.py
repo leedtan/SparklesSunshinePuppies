@@ -22,7 +22,7 @@ for i in pool:
 
 
 # KY_CD bar chart with respect to years
-plt.figure(figsize=(15, 6))
+plt.figure(figsize=(12, 6))
 c = sns.color_palette("muted", 6)
 c2 = sns.color_palette("bright", 6)
 
@@ -33,20 +33,19 @@ w = 0.15
 for i in range(6):
     plt.bar(ind+w*i, lst[i], w, color=c[i], label=pool_desc[i], alpha=0.3)
 for i in range(6):
-    plt.plot(ind+w*(i+.5), lst[i], "o-", color=c2[i], label=pool_desc[i], linewidth=3)
+    plt.plot(ind+w*(i+.5), lst[i], "o-", color=c2[i], label=pool_desc[i], linewidth=2)
 
 plt.xlabel('Year')
 plt.ylabel('Crime Occurrence')
 plt.title('Top-6 Crime Type Over Year', fontsize=16)
 plt.xticks(ind+3*w, year)
-plt.legend(bbox_to_anchor=(1.03, 0.8), loc=2, borderaxespad=0.)
-plt.tight_layout()
-plt.savefig('kycd_year_bar.png')
+lgd = plt.legend(bbox_to_anchor=(1.03, 0.8), loc=2, borderaxespad=0.)
+plt.savefig('kycd_year_bar.png', bbox_extra_artists=(lgd,), bbox_inches='tight')
 plt.show()
 
 
 # Total crime occurrences with respect to years
-plt.figure(figsize=(12, 4))
+plt.figure(figsize=(12, 6))
 plt.plot(year, ttl, "o-", linewidth=3, fillstyle='full', color='skyblue')
 plt.xticks(year, [str(x) for x in range(2006, 2016)])
 plt.title('Total Crime Occurrence Over Year')
@@ -60,13 +59,11 @@ plt.show()
 plt.savefig('ttl_year.png')
 
 
-
 # Select the top 10 offense classification types into the pool
 pool_10 = [341, 578, 344, 351, 109, 235, 361, 105, 107, 106]
 pool_desc_10 = ['Petit Larceny', 'Harrassment 2', 'Assault 3', 'Criminal Mischief', 'Grand Larceny', 'Dangerous Drugs',
                'Offenses Against Public Order', 'Robbery', 'Burglary', 'Felony Assault']
 df_tops_10 = df[df.KY_CD.isin(pool_10)]
-
 
 lst = []
 for i in pool_10:
@@ -81,10 +78,6 @@ plt.xticks(year, [str(x) for x in range(2006, 2016)])
 plt.xlabel('Year')
 plt.ylabel('Crime Occurrence')
 plt.title('Top 10 Crime Type Over Year')
-plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+plt.legend(bbox_to_anchor=(1.03, 0.7), loc=2, borderaxespad=0.)
 plt.savefig('kycd_year_line.png')
 plt.show()
-
-
-
-
