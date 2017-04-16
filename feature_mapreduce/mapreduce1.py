@@ -83,7 +83,7 @@ if __name__ == "__main__":
 	    ]))\
             .sortByKey(lambda x: x[0])
 
-    result = line.map(lambda(k, v): "{0},{1},{2},{3}".format(
+    result = line.map(lambda (k, v): "{0},{1},{2},{3}".format(
 		v[0] if v[1] != 'Empty' else '00/00/0000',
 	        'Empty' if v[1] == 'Empty' else 'DATETIME', 
 		'Complaint Start Date', 
