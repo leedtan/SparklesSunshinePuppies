@@ -18,7 +18,7 @@
  bash run_all_scripts.sh
  ```
 
-### To explore more about the time-series data analysis:
+### To explore more about hypothesis and data analysis:
 
  > Use PysparkSQL to explore the crime type analysis with respect to year, month and day of week. Below is an example:
  
@@ -32,4 +32,6 @@
   kycd_hour_mapreduce.py
   ```
   
- > All the plots scripts and notebooks are in the folder "plots"
+ > All the plots scripts and notebooks are in the folder "plots".
+ 
+ > Datasets are all processed on Dumbo server with Pyspark mapreduce. 
